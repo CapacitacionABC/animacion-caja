@@ -13,7 +13,7 @@
 
 				$cajaRoja.animate({
 					top: "-=50px"
-				});
+				}, 200);
 
 			break;
 
@@ -21,7 +21,7 @@
 
 				$cajaRoja.animate({
 					top: "+=50px"
-				});
+				}, 200);
 
 			break;
 
@@ -30,7 +30,7 @@
 
 				$cajaRoja.animate({
 					left: "+=50px"
-				});
+				}, 200);
 				
 
 			break;
@@ -39,7 +39,7 @@
 
 				$cajaRoja.animate({
 					left: "-=50px"
-				});
+				}, 200);
 				
 			break;
 
@@ -48,7 +48,7 @@
 				$cajaRoja.animate({
 					left: "0px",
 					top: "0px"
-				});
+				}, 2000);
 				
 			break;
 
@@ -63,9 +63,6 @@
 		$cajaRoja.clearQueue();
 
 		var keyCode = e.keyCode;
-
-		console.log(keyCode);
-		
 		
 		switch( keyCode ){
 
@@ -73,7 +70,7 @@
 
 				$cajaRoja.animate({
 					top: "-=50px"
-				});
+				}, 200);
 
 			break;
 
@@ -81,7 +78,7 @@
 
 				$cajaRoja.animate({
 					top: "+=50px"
-				});
+				}, 200);
 
 			break;
 
@@ -90,7 +87,7 @@
 
 				$cajaRoja.animate({
 					left: "+=50px"
-				});
+				}, 200);
 				
 
 			break;
@@ -99,7 +96,7 @@
 
 				$cajaRoja.animate({
 					left: "-=50px"
-				});
+				}, 200);
 				
 			break;
 
@@ -108,7 +105,7 @@
 				$cajaRoja.animate({
 					left: "0px",
 					top: "0px"
-				});
+				}, 2000);
 				
 			break;
 
@@ -120,10 +117,7 @@
 
 	$("button").on("click", function(){
 
-		var dir = $(this).data("dir");
-
-		console.log(dir);
-		
+		var dir = $(this).data("dir");		
 
 		mover( dir );		
 	});
