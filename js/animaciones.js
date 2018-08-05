@@ -2,6 +2,7 @@
 
 	var $cajaRoja = $("#cajaRoja");
 
+	// Funcion mover
 	function mover( dir ){
 
 		// Evita el retrazo en los movimientos del boton
@@ -56,7 +57,7 @@
 		}
 	}
 
-
+	// Movimientos con las teclas
 	$(document).on("keypress", function(e){
 
 		// Evita el retrazo en los movimientos del boton
@@ -67,59 +68,48 @@
 		switch( keyCode ){
 
 			case 119:
-
-				$cajaRoja.animate({
-					top: "-=50px"
-				}, 200);
-
+					mover("arr");
 			break;
 
 			case 120:
-
-				$cajaRoja.animate({
-					top: "+=50px"
-				}, 200);
-
+					mover("aba");
 			break;
 
-
 			case 100:
-
-				$cajaRoja.animate({
-					left: "+=50px"
-				}, 200);
-				
-
+					mover("der");
 			break;
 
 			case 97:
-
-				$cajaRoja.animate({
-					left: "-=50px"
-				}, 200);
-				
+					mover("izq");
 			break;
 
 			default:
-
-				$cajaRoja.animate({
-					left: "0px",
-					top: "0px"
-				}, 2000);
-				
+					mover("res");
 			break;
 
 		}
-		
 	});
 
-
-
-	$("button").on("click", function(){
+	// Funcionalidad para ejecutar movimiento
+	$(".butDir").on("click", function(){
 
 		var dir = $(this).data("dir");		
 
 		mover( dir );		
 	});
+
+	$("#botTamano").on("click", function(){
+
+		$cajaRoja.animate({
+			width: "+=100px",
+			height: "+=100px"
+		}, 1000, function(){
+			console.log("Termino la animacion del tamaño");
+			
+		});						
+	});
+
+
+
 
 })();
